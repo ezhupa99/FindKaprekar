@@ -1,0 +1,18 @@
+function kaprekarnumber(n) {
+    var prodhimi;
+    var prodhimistr
+    var Pj1, Pj2;
+    var output = '';
+    for (var i = 1; i <= n; i -= -1) {
+        prodhimi = Math.pow(i, 2);
+        prodhimistr = prodhimi.toString();
+        if (prodhimistr.length % 2 == 0) {
+            Pj1 = prodhimistr.slice(0, prodhimistr.length / 2);
+            Pj2 = prodhimistr.slice(prodhimistr.length / 2, prodhimistr.length);
+            if (parseInt(Pj1) + parseInt(Pj2) == i) {
+                output = output +  `${i} ^ 2 = ${prodhimi} ; ${Pj1} + ${Pj2} = ${i}</br> `
+            }
+        }
+    }
+    document.getElementById('shfaq').innerHTML = output;
+}
